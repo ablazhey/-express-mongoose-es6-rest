@@ -26,5 +26,23 @@ export default {
       username: Joi.string().required(),
       password: Joi.string().required()
     }
+  },
+
+  createArticle: {
+    body: {
+      title: Joi.string().required(),
+      text: Joi.string().required()
+    }
+  },
+
+  // UPDATE /api/articles/:articleId
+  updateArticle: {
+    body: {
+      title: Joi.string().required(),
+      text: Joi.string().required()
+    },
+    params: {
+      articleId: Joi.string().hex().required()
+    }
   }
 };
